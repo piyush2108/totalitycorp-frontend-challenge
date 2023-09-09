@@ -1,3 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=DM+Sans:opsz@9..40&display=swap');
+
 @tailwind base;
+
+*::-webkit-scrollbar {
+   width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+   background: #F2F2F2;
+}
+
+*::-webkit-scrollbar-thumb {
+   background-color: #EC4E20;
+}
+
 @tailwind components;
 @tailwind utilities;
+
+html{
+   scroll-behavior: smooth;
+   scrollbar-width: thin;
+   scrollbar-color: #EC4E20 #F2F2F2;
+}
