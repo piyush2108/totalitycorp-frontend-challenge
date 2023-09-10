@@ -10,6 +10,7 @@ import ProductDisplay from './Components/Body/ProductDisplay'
 import store from './Store/store'
 import About from './Components/Body/About'
 import Offers from './Components/Body/Offers'
+import Checkout from './Components/Body/Checkout'
 
 function AppLayout(){
   return(
@@ -45,7 +46,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/checkout",
-        element: <h1>Checkout Page</h1>
+        element: <Checkout />
       }
     ]
   }

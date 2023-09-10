@@ -4,7 +4,7 @@ import { clearCart } from "../../Store/Slices/CartSlice"
 
 const CartItem = ({cartItem}) => {
    return(
-      <div className="w-full p-2 font-primary flex justify-between items-center shadow-md bg-white rounded-lg">
+      <div className="w-full p-2 font-primary flex justify-between items-center shadow-md rounded-lg">
          <div>
             <h1 className="text-xs sm:text-sm md:text-base">{cartItem.title}</h1>
             <p className="text-sm sm:text-base md:text-lg text-primaryRed">${cartItem.price}</p>
@@ -21,7 +21,7 @@ function Cart(){
    const {cartItems, cartPrice} = useSelector(store => store.cart)
 
    return(
-      <div className="w-full h-[80vh] p-4 flex flex-col sm:flex-row gap-2 bg-white absolute top-full left-0 z-20 shadow-lg overflow-y-scroll">
+      <div className="w-full max-h-[80vh] p-4 flex flex-col sm:flex-row gap-2 absolute top-full left-0 z-20 backdrop-blur-2xl shadow-lg overflow-y-scroll">
          <div className="w-full sm:w-1/2 flex-grow p-2 flex flex-col justify-start items-center gap-2 border-[1px] border-primaryBlack/50 rounded-lg">
             <button 
                className="p-2 text-sm sm:text-base text-white bg-primaryRed rounded-lg hover:shadow-lg" 
@@ -31,6 +31,9 @@ function Cart(){
             </button>
 
             <div className="w-full p-2 overflow-y-scroll">
+               {
+                  cartItems.length === 0 && <h1 className="text-sm sm:text-base md:text-lg text-center">Items added to cart will show here.</h1>
+               }
                {
                   cartItems.map((cartItem) => {
                      return <CartItem key={cartItem.id} cartItem={cartItem}/>

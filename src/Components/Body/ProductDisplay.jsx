@@ -73,12 +73,12 @@ function ProductDisplay(){
             Back to store
          </Link>
 
-         <div className="py-12 px-[10%] min-h-screen font-primary flex flex-col md:flex-row justify-between items-start gap-8 transition-colors">
-            <div className="w-full md:w-1/2 p-2 flex justify-center">
-               <img className="w-4/5 sm:w-1/2" alt="Product Banner" src={product?.image} />
+         <div className="py-12 px-[10%] min-h-screen font-primary flex flex-col lg:flex-row justify-between items-start gap-8 transition-colors">
+            <div className="w-full lg:w-1/2 p-2 flex justify-center">
+               <img className="md:w-1/2 w-2/5" alt="Product Banner" src={product?.image} />
             </div>
 
-            <div className="w-full md:w-1/2 p-4 border-[1px] border-primaryBlack/20 rounded-lg">
+            <div className="w-full lg:w-1/2 p-4 border-[1px] border-primaryBlack/20 rounded-lg">
                <div className="text-sm sm:text-base md:text-lg flex justify-between items-center">
                   <p className="opacity-80 uppercase">{product?.category}</p>
 
@@ -90,7 +90,7 @@ function ProductDisplay(){
 
                <h1 className="py-2 font-secondary text-base sm:text-xl md:text-2xl">{product?.title}</h1>
 
-               <p className="py-4 text-sm sm:text-base md:text-lg">{product?.description}</p>
+               <p className="py-4 text-sm sm:text-base">{product?.description}</p>
 
                <p className="py-2 font-secondary text-lg sm:text-2xl md:text-3xl text-primaryRed">${product?.price}</p>
 

@@ -8,9 +8,9 @@
   - [x] Cart section to display the added products, quantities, and total cost
   - [x] Increase, decrease, or remove items from the cart
 
-- [ ] Checkout
+- [x] Checkout
 
   - [x] Calculates total of all items in cart
-  - [ ] Allow user to enter shipping information and payment details
+  - [x] Allow user to enter shipping information and payment details
 
-- [ ] Responsive Design
+- [x] Responsive Design
