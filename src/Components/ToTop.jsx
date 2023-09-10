@@ -1,4 +1,4 @@
-// This component is used to scroll all thorough the top of webpage
+// To scroll all thorough the top of webpage
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUpLong } from "@fortawesome/free-solid-svg-icons";

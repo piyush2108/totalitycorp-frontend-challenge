@@ -21,7 +21,7 @@ function Cart(){
    const {cartItems, cartPrice} = useSelector(store => store.cart)
 
    return(
-      <div className="w-full max-h-[80vh] p-4 flex flex-col sm:flex-row gap-2 absolute top-full left-0 z-20 backdrop-blur-2xl shadow-lg overflow-y-scroll">
+      <div className="w-full max-h-[80vh] p-4 flex flex-col sm:flex-row gap-2 absolute top-full left-0 z-20 bg-white shadow-lg overflow-y-scroll">
          <div className="w-full sm:w-1/2 flex-grow p-2 flex flex-col justify-start items-center gap-2 border-[1px] border-primaryBlack/50 rounded-lg">
             <button 
                className="p-2 text-sm sm:text-base text-white bg-primaryRed rounded-lg hover:shadow-lg" 

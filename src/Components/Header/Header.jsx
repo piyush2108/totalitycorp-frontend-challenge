@@ -57,7 +57,7 @@ function Header(){
 
             {
                menuStatus && 
-               <div className="lg:hidden w-full mt-4 p-4 bg-white backdrop-blur-sm flex flex-col justify-between items-start gap-2 rounded-md absolute top-full shadow-xl transition-all">
+               <div className="lg:hidden w-full mt-4 p-4 bg-white flex flex-col justify-between items-start gap-2 rounded-md absolute top-full shadow-xl transition-all">
                   <Link className="w-full text-base sm:text-lg md:text-2xl flex justify-center items-center gap-2" to="/" onClick={() => handleMenuStatus()}>
                      <p className="hover:text-primaryRed">Store</p>
                   </Link>

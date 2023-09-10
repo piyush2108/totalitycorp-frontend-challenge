@@ -19,7 +19,7 @@ function Wishlist(){
    const {wishlistItems} = useSelector(store => store.wishlist)
 
    return(
-      <div className="w-full max-h-[80vh] sm:w-1/2 p-4 backdrop-blur-2xl absolute top-full right-0 shadow-lg z-20 overflow-y-scroll">
+      <div className="w-full max-h-[80vh] sm:w-1/2 p-4 bg-white absolute top-full right-0 shadow-lg z-20 overflow-y-scroll">
          <div className="w-full flex-grow p-2 flex flex-col justify-start items-center gap-2 rounded-lg">
             <button 
                className="p-2 text-sm sm:text-base text-white bg-primaryRed rounded-lg hover:shadow-lg" 
