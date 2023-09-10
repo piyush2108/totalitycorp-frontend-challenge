@@ -1,7 +1,7 @@
-- [ ] Product Listing
+- [x] Product Listing
 
   - [x] Products with images, names, prices, and "Add to Cart" buttons
-  - [ ] Implement filters to allow users to sort products by category, price range, or ratings.
+  - [x] Implement filters to allow users to sort products by category, price range, or ratings.
 
 - [ ] Shopping Cart
 
@@ -10,7 +10,7 @@
 
 - [ ] Checkout
 
-  - [ ] Calculates total of all items in cart
+  - [x] Calculates total of all items in cart
   - [ ] Allow user to enter shipping information and payment details
 
 - [ ] Responsive Design

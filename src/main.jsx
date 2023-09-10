@@ -13,11 +13,11 @@ import Offers from './Components/Body/Offers'
 
 function AppLayout(){
   return(
-    <>
+    <Provider store={store}>
       <Header />
       <Outlet />
       <Footer />
-    </>
+    </Provider>
   )
 }
 
@@ -42,6 +42,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/products/:id",
         element: <ProductDisplay />
+      },
+      {
+        path: "/checkout",
+        element: <h1>Checkout Page</h1>
       }
     ]
   }

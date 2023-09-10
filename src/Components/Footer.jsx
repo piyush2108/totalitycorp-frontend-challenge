@@ -8,7 +8,7 @@ function Footer() {
     <div className="py-10 px-[10%] bg-gradient-to-b from-white via-secondaryWhite to-primaryRed/50 font-primary flex flex-col md:flex-row justify-between items-center cursor-default relative">
       <div className="py-12 text-shadeLight flex flex-col justify-center items-center gap-4">
          <FontAwesomeIcon className="text-3xl" icon={faShekelSign} />
-         <h1 className="text-5xl">SwiftBasket</h1>
+         <h1 className="text-5xl"><span className="text-primaryRed">Swift</span>Basket</h1>
       </div>
 
       <div className="w-full md:w-1/2 flex justify-between gap-2">

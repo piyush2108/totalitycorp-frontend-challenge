@@ -56,13 +56,13 @@ function Body(){
 
    return(
       <> 
-         <div className="py-4 px-[10%] font-primary flex justify-center items-center gap-2">
+         <div className="py-4 px-[10%] font-secondary flex justify-center items-center gap-4">
             <select 
                value={selectedCategory} 
                id="category" 
                name="category"
                onChange={(e) => setSelectedCategory(e.target.value)}
-               className="p-2 text-lg rounded-lg"
+               className="p-2 rounded-lg border-[1px] border-primaryBlack focus:border-primaryRed"
             >
                <option value="">All</option>
                <option value="electronics">Electronics</option>
