@@ -3,10 +3,10 @@
   - [x] Products with images, names, prices, and "Add to Cart" buttons
   - [x] Implement filters to allow users to sort products by category, price range, or ratings.
 
-- [ ] Shopping Cart
+- [x] Shopping Cart
 
-  - [ ] Cart section to display the added products, quantities, and total cost
-  - [ ] Increase, decrease, or remove items from the cart
+  - [x] Cart section to display the added products, quantities, and total cost
+  - [x] Increase, decrease, or remove items from the cart
 
 - [ ] Checkout
 

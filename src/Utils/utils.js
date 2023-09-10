@@ -1,15 +1,28 @@
 export const filterData = (products, targetTitle, targetCategory) => {
-   const data = products.filter(product => {
-      if(targetCategory === ""){
-         return product.title.toLowerCase().includes(targetTitle.toLowerCase())
-      }
-      else{
-         return (
-            product.title.toLowerCase().includes(targetTitle.toLowerCase()) &&
-            product.category.toLowerCase() === targetCategory.toLowerCase()
-          )
-      }
-   })
-   
-   return data;   
+   let data
+
+   if(targetTitle === ""){
+      data = products.filter(product => {
+         if(targetCategory !== ""){
+            return product.category.toLowerCase() === targetCategory.toLowerCase()
+         }
+         else{
+            return true
+         }
+      })
+   }
+
+   else{
+      data = products.filter(product => {
+         if(targetCategory !== ""){
+            return product.category.toLowerCase() === targetCategory.toLowerCase() &&
+            product.title.toLowerCase().includes(targetTitle.toLowerCase())
+         }
+         else{
+            return true
+         }
+      })
+   } 
+
+   return data
 };

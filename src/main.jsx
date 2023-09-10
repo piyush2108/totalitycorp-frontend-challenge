@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom/client'
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
-import Header from './Components/Header'
+import Header from './Components/Header/Header'
 import Footer from './Components/Footer'
 import Body from './Components/Body/Body'
 import ErrorLayout from './Components/Error'

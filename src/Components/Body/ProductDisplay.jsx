@@ -1,19 +1,20 @@
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import { ALL_PRODUCTS_URL } from "../../constant"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faHeart, faStar } from "@fortawesome/free-solid-svg-icons"
-import ProductDisplayShimmer from "./ProductDisplayShimmer"
+import { faArrowLeft, faStar } from "@fortawesome/free-solid-svg-icons"
 import { useDispatch, useSelector } from "react-redux"
+import { useEffect, useState } from "react"
+import { Link, useParams } from "react-router-dom"
+
 import { addProduct, decreaseProductCount, removeProduct } from "../../Store/Slices/CartSlice"
-import { addToWishlist } from "../../Store/Slices/WishlistSlice"
+import { addToWishlist, removeFromWishlist } from "../../Store/Slices/WishlistSlice"
+import { ALL_PRODUCTS_URL } from "../../constant"
+import ProductDisplayShimmer from "./ProductDisplayShimmer"
 
 function ProductDisplay(){
    const dispatch = useDispatch()
    const {id} = useParams()
    const [product, setProduct] = useState(null)
-   const [wishListStatus, setWishListStatus] = useState(false)
    const cartItems = useSelector(store => store.cart.cartItems)
+   const wishlistItems = useSelector(store => store.wishlist.wishlistItems)
 
    useEffect(()=>{
       window.scrollTo(0, 0)
@@ -56,71 +57,89 @@ function ProductDisplay(){
    }
 
    const handleAddToWishlist = () => {
-      setWishListStatus(true)
       dispatch(addToWishlist(product))
+   }
+
+   const handleRemoveFromWishlist = () => {
+      dispatch(removeFromWishlist(product))
    }
 
    if(!product) return <ProductDisplayShimmer />
 
    return(
-      <div className="py-12 px-[10%] min-h-screen font-primary flex flex-col md:flex-row justify-between items-start gap-8 transition-colors">
-         <div className="w-full md:w-1/2 p-2 flex justify-center">
-            <img className="w-9/12" alt="Product Banner" src={product?.image} />
-         </div>
+      <div className="p-2 flex flex-col items-center gap-4">
+         <Link className="group w-fit p-2 font-secondary text-base sm:text-lg md:text-xl text-primaryBlack hover:text-primaryRed" to="/">
+            <FontAwesomeIcon className="mr-2 group-hover:mr-4" icon={faArrowLeft} />
+            Back to store
+         </Link>
 
-         <div className="w-full md:w-1/2 p-4 border-[1px] border-primaryBlack/20 rounded-lg">
-            <div className="flex justify-between items-center">
-               <p className="text-lg opacity-80 uppercase">{product?.category}</p>
-
-               <p>
-                  <FontAwesomeIcon className="text-orange-500" icon={faStar} />
-                  <span>{`${product?.rating?.rate} (${product?.rating?.count})`}</span>
-               </p>
+         <div className="py-12 px-[10%] min-h-screen font-primary flex flex-col md:flex-row justify-between items-start gap-8 transition-colors">
+            <div className="w-full md:w-1/2 p-2 flex justify-center">
+               <img className="w-4/5 sm:w-1/2" alt="Product Banner" src={product?.image} />
             </div>
 
-            <h1 className="py-2 font-secondary text-4xl">{product?.title}</h1>
+            <div className="w-full md:w-1/2 p-4 border-[1px] border-primaryBlack/20 rounded-lg">
+               <div className="text-sm sm:text-base md:text-lg flex justify-between items-center">
+                  <p className="opacity-80 uppercase">{product?.category}</p>
 
-            <p className="py-4">{product?.description}</p>
-
-            <p className="py-2 font-secondary text-5xl text-primaryRed">${product?.price}</p>
-
-            <div className="p-4 flex flex-col justify-around items-center gap-2">
-               <div className="flex justify-around items-center border-[1px] border-primaryBlack/20 rounded-lg overflow-hidden">
-                  <button 
-                     onClick={() => handleAddProduct()}
-                     className="p-2 border-r-[1px] border-primaryBlack/20 text-2xl hover:bg-primaryBlack/20"
-                  >
-                     +
-                  </button>
-
-                  <button className="p-2 border-r-[1px] border-primaryBlack/20 text-2xl hover:bg-primaryBlack/20">{getProductCount()}</button>
-
-                  <button 
-                     onClick={() => handleDecreaseProductCount()}
-                     className="p-2 border-r-[1px] border-primaryBlack/20 text-2xl hover:bg-primaryBlack/20"
-                  >
-                     -
-                  </button>
+                  <p>
+                     <FontAwesomeIcon className="text-orange-500" icon={faStar} />
+                     <span>{`${product?.rating?.rate} (${product?.rating?.count})`}</span>
+                  </p>
                </div>
 
-               {
-                  getProductCount() > 0 &&
-                  <button 
-                     onClick={() => handleRemoveProduct()}
-                     className="p-2 text-2xl border-[1px] border-primaryBlack rounded-lg hover:bg-primaryBlack hover:text-secondaryWhite"
-                  >
-                     Remove Product
-                  </button> 
-               }
+               <h1 className="py-2 font-secondary text-base sm:text-xl md:text-2xl">{product?.title}</h1>
 
-               
-               <button 
-                  disabled={wishListStatus}
-                  onClick={() => handleAddToWishlist()}
-                  className="p-2 text-2xl border-[1px] border-primaryBlack rounded-lg hover:bg-primaryBlack hover:text-secondaryWhite"
-               >
-                  {wishListStatus ? "Added to Wishlist" : "Add to Wishlist"}
-               </button> 
+               <p className="py-4 text-sm sm:text-base md:text-lg">{product?.description}</p>
+
+               <p className="py-2 font-secondary text-lg sm:text-2xl md:text-3xl text-primaryRed">${product?.price}</p>
+
+               <div className="p-4 flex flex-col justify-around items-center gap-2">
+                  <div className="flex justify-around items-center border-[1px] border-primaryBlack/20 rounded-lg overflow-hidden">
+                     <button 
+                        onClick={() => handleAddProduct()}
+                        className="p-2 border-r-[1px] border-primaryBlack/20 text-base sm:text-xl md:text-2xl hover:bg-primaryBlack/20"
+                     >
+                        +
+                     </button>
+
+                     <button className="p-2 border-r-[1px] border-primaryBlack/20 text-base sm:text-xl md:text-2xl hover:bg-primaryBlack/20">{getProductCount()}</button>
+
+                     <button 
+                        onClick={() => handleDecreaseProductCount()}
+                        className="p-2 border-r-[1px] border-primaryBlack/20 text-base sm:text-xl md:text-2xl hover:bg-primaryBlack/20"
+                     >
+                        -
+                     </button>
+                  </div>
+
+                  {
+                     getProductCount() > 0 &&
+                     <button 
+                        onClick={() => handleRemoveProduct()}
+                        className="p-2 text-base sm:text-xl md:text-2xl border-[1px] border-primaryBlack rounded-lg hover:bg-primaryBlack hover:text-secondaryWhite"
+                     >
+                        Remove Product
+                     </button> 
+                  }
+
+                  {
+                     !wishlistItems.some((item) => item.id === product?.id) ?
+                     <button 
+                        onClick={() => handleAddToWishlist()}
+                        className="p-2 text-base sm:text-xl md:text-2xl border-[1px] border-primaryBlack rounded-lg hover:bg-primaryBlack hover:text-secondaryWhite"
+                     >
+                        Add to Wishlist
+                     </button> :
+                     <button 
+                        onClick={() => handleRemoveFromWishlist()}
+                        className="p-2 text-base sm:text-xl md:text-2xl border-[1px] border-primaryBlack rounded-lg hover:bg-primaryBlack hover:text-secondaryWhite"
+                     >
+                        Remove from Wishlist
+                     </button>
+
+                  }
+               </div>
             </div>
          </div>
       </div>

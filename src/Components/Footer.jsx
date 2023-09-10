@@ -11,8 +11,8 @@ function Footer() {
          <h1 className="text-5xl"><span className="text-primaryRed">Swift</span>Basket</h1>
       </div>
 
-      <div className="w-full md:w-1/2 flex justify-between gap-2">
-        <ul>
+      <div className="w-full md:w-1/2 flex flex-col sm:flex-row justify-between gap-2">
+        <ul className="mt-4">
           <li className="mb-4 text-lg opacity-80 hover:opacity-100">
             Company
           </li>
@@ -34,7 +34,7 @@ function Footer() {
           </li>
         </ul>
 
-        <ul>
+        <ul className="mt-4">
           <li className="mb-4 text-lg opacity-80 hover:opacity-100">
             Contact
           </li>
@@ -52,7 +52,7 @@ function Footer() {
           </li>
         </ul>
 
-        <ul>
+        <ul className="mt-4">
           <li className="mb-4 text-lg opacity-80 hover:opacity-100">
             Legal
           </li>
