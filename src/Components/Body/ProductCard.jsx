@@ -3,6 +3,7 @@ import { faShoppingBag, faStar } from "@fortawesome/free-solid-svg-icons"
 import { useDispatch } from "react-redux"
 
 import { addProduct } from "../../Store/Slices/CartSlice"
+import productPlaceholder from "../../assets/product.webp"
 
 function ProductCard({product}){
    const dispatch = useDispatch()
@@ -24,7 +25,7 @@ function ProductCard({product}){
             </button>
          </div>
 
-         <img className="p-2 h-[200px] w-[200px] object-contain" alt="Product Banner" src={product?.image}></img>
+         <img className="p-2 h-[200px] w-[200px] object-contain" alt="Product Banner" src={product?.image ? product?.image : productPlaceholder}></img>
 
          <p className="w-full text-xs sm:text-sm opacity-80 uppercase">{product?.category}</p>
          <h1 className="h-6 sm:h-8 text-base sm:text-lg w-full overflow-y-hidden">{product?.title}</h1>

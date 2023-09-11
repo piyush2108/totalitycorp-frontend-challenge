@@ -8,6 +8,7 @@ import { addProduct, decreaseProductCount, removeProduct } from "../../Store/Sli
 import { addToWishlist, removeFromWishlist } from "../../Store/Slices/WishlistSlice"
 import { ALL_PRODUCTS_URL } from "../../constant"
 import ProductDisplayShimmer from "./ProductDisplayShimmer"
+import productPlaceholder from "../../assets/product.webp"
 
 function ProductDisplay(){
    const dispatch = useDispatch()
@@ -75,7 +76,7 @@ function ProductDisplay(){
 
          <div className="py-12 px-[10%] min-h-screen font-primary flex flex-col lg:flex-row justify-between items-start gap-8 transition-colors">
             <div className="w-full lg:w-1/2 p-2 flex justify-center">
-               <img className="md:w-1/2 w-2/5" alt="Product Banner" src={product?.image} />
+               <img className="md:w-1/2 w-2/5" alt="Product Banner" src={product?.image ? product?.image : productPlaceholder} />
             </div>
 
             <div className="w-full lg:w-1/2 p-4 border-[1px] border-primaryBlack/20 rounded-lg">

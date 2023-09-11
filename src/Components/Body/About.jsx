@@ -1,12 +1,9 @@
-import Shopping from "../../assets/shopping.webp"
-
 function About(){
    return(
       <div className="px-[10%] font-primary flex flex-col justify-center items-center">
-         <div className="w-full p-4 font-primary flex flex-col md:flex-row justify-center items-center gap-4">
+         <div className="w-full py-6 font-primary flex flex-col md:flex-row justify-center items-center gap-4">
             <h1 className="w-full md:w-1/2 text-2xl sm:text-3xl md:text-5xl">
             <span className="text-primaryRed">SwiftBasket</span>: Shopping Made Easy, Savings Made Swift.</h1>
-            <img className="w-full md:w-1/4" src={Shopping} />
          </div>
 
          <div className="w-full p-4">

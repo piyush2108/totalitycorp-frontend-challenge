@@ -1,10 +1,14 @@
-import OfferImage from "../../assets/offers.webp"
+import OfferImage from "../../assets/offer.webp"
 
 function Offers(){
    return(
-      <div className="px-[10%] font-primary flex flex-col justify-center items-center">
-         <div className="w-full p-4 font-primary flex justify-center items-center gap-4">
-            <img className="w-4/5" src={OfferImage} />
+      <div className="py-2 px-[10%] font-primary flex flex-col justify-center items-center">
+         <div className="p-2 w-full font-primary flex flex-col sm:flex-row justify-center items-center gap-4 ">
+            <img className="h-40 sm:h-52 w-40 sm:w-52 object-contain" src={OfferImage} />
+            <div className="flex flex-col justify-center items-center">
+               <h1 className="font-primary text-xl sm:text-3xl md:text-5xl z-10">Big <span className="text-5xl sm:text-6xl md:text-7xl text-primaryRed">Sale</span></h1>
+               <p className="font-secondary text-base sm:text-lg md:text-xl z-10">Upto 23% off on Popular Items.</p>
+            </div>
          </div>
 
          <div className="w-full p-4">
