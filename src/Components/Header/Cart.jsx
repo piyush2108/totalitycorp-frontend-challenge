@@ -18,7 +18,7 @@ const CartItem = ({cartItem}) => {
 
 function Cart(){
    const dispatch = useDispatch()
-   const {cartItems, cartPrice} = useSelector(store => store.cart)
+   const {user, cartItems, cartPrice} = useSelector(store => store.cart)
 
    return(
       <div className="w-full max-h-[80vh] p-4 flex flex-col sm:flex-row gap-2 absolute top-full left-0 z-20 bg-white shadow-lg overflow-y-scroll">
@@ -51,7 +51,7 @@ function Cart(){
                      cartItems.map(cartItem => {
                         return(
                            <div className="m-2 p-2 flex justify-between items-center" key={cartItem.id}>
-                              <h1 className="text-xs sm:text-sm md:text-base">{cartItem.title}</h1>
+                              <h1 className="w-4/5 text-xs sm:text-sm md:text-base">{cartItem.title}</h1>
                               <p className="text-xs sm:text-sm md:text-base">{cartItem.price} x <span className="text-primaryRed"> {cartItem.count}</span></p>
                            </div>
                         )
@@ -62,8 +62,14 @@ function Cart(){
                <h1 className="p-2 text-sm sm:text-base shadow-md rounded-lg">Total Cost: <span className="text-primaryRed">${cartPrice.toFixed(2)}</span></h1>
 
             </div>
-
-            <Link className="p-2 text-sm sm:text-base text-white bg-primaryRed rounded-lg hover:shadow-lg" to="/checkout">Checkout</Link>
+            
+            <button className="p-2 text-sm sm:text-base text-white bg-primaryRed rounded-lg hover:shadow-lg">
+               {
+                  user ? 
+                  <Link to="/checkout">Checkout</Link> :
+                  <Link to="/auth">Login</Link>
+               }
+            </button>
          </div>
       </div>
    )

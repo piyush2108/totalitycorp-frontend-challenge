@@ -1,10 +1,12 @@
 # Swift Basket - Frontend Ecommerce Website
 
-Swift Basket is a modern and user-friendly ecommerce website built with React, Redux, and Tailwind CSS. This project allows users to browse a wide range of products, add items to their cart, and create a wishlist. It leverages the "FakeStoreAPI" to populate the website with mock ecommerce data.
+Swift Basket is a modern and user-friendly ecommerce website built with React, Redux, and Tailwind CSS. This project allows users to browse a wide range of products, add items to their cart, create a wishlist, and includes user authentication features. It leverages the "FakeStoreAPI" to populate the website with mock ecommerce data.
 
 ## Table of Contents
+
 - [Demo](#demo)
 - [Features](#features)
+- [User Authentication](#user-authentication)
 - [Dependencies](#dependencies)
 
 ---
@@ -33,6 +35,20 @@ Swift Basket offers a range of features to enhance the shopping experience:
 
 ---
 
+## User Authentication
+
+Swift Basket uses user authentication to enhance the shopping experience:
+
+- **User Registration:** Users can create an account by providing their email and password.
+
+- **User Login:** Registered users can log in with their credentials to access personalized features such as a persistent shopping cart and wishlist.
+
+- **User Profile:** Registered users have a profile section where they can update their personal information and password.
+
+- **Secure Authentication:** User authentication is handled securely using the same [FakeStoreAPI](https://fakestoreapi.com/docs) for user management.
+
+---
+
 ## Dependencies
 
 Swift Basket relies on the following key technologies and libraries:
@@ -43,12 +59,12 @@ Swift Basket relies on the following key technologies and libraries:
 
 - **Tailwind CSS**: A utility-first CSS framework for quickly styling web applications.
 
-- **FakeStoreAPI**: A mock ecommerce API used to populate the website with product data.
+- **FakeStoreAPI**: A mock ecommerce API used to populate the website with product data and handle user authentication.
 
   - [FakeStoreAPI Documentation](https://fakestoreapi.com/docs)
-  
+
   - [FakeStoreAPI GitHub Repository](https://github.com/jaewonhimnae/fake-store-api)
 
 - Other project-specific dependencies can be found in the `package.json` file.
 
-These libraries and tools were chosen to provide a robust foundation for building a modern and responsive ecommerce website with a focus on user experience and maintainability.
+These libraries and tools were chosen to provide a robust foundation for building a modern and responsive ecommerce website with a focus on user experience, maintainability, and secure user authentication.

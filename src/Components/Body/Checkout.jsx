@@ -26,8 +26,8 @@ function Checkout(){
                         <input className="m-2 p-2 border-[1px] border-primaryBlack focus:outline-none" placeholder="Last Name" />
                         <input className="w-full m-2 p-2 border-[1px] border-primaryBlack focus:outline-none" placeholder="Address Line 1" />
                         <input className="w-full m-2 p-2 border-[1px] border-primaryBlack focus:outline-none" placeholder="Address Line 2" />
-                        <input className="w-1/2 m-2 p-2 border-[1px] border-primaryBlack focus:outline-none" placeholder="Email Address" />
-                        <input className="w-1/2 m-2 p-2 border-[1px] border-primaryBlack focus:outline-none" placeholder="Phone Number" />
+                        <input type="email" className="w-1/2 m-2 p-2 border-[1px] border-primaryBlack focus:outline-none" placeholder="Email Address" />
+                        <input  className="w-1/2 m-2 p-2 border-[1px] border-primaryBlack focus:outline-none" placeholder="Phone Number" />
 
                         <button className="w-full m-2  p-2 self-end text-base sm:text-lg md:text-xl border-[1px] border-primaryRed hover:bg-primaryRed hover:text-secondaryWhite">Save & Next</button>
                      </div> :
@@ -36,8 +36,8 @@ function Checkout(){
                         <input className="m-2 p-2 border-[1px] border-primaryBlack focus:outline-none" placeholder="Last Name" />
                         <input className="w-full m-2 p-2 border-[1px] border-primaryBlack focus:outline-none" placeholder="Card Number" />
                         <input className="w-full m-2 p-2 border-[1px] border-primaryBlack focus:outline-none" placeholder="Payment Method" />
-                        <input className="w-1/2 m-2 p-2 border-[1px] border-primaryBlack focus:outline-none" placeholder="Email Address" />
-                        <input className="w-1/2 m-2 p-2 border-[1px] border-primaryBlack focus:outline-none" placeholder="Phone Number" />
+                        <input type="email" className="w-1/2 m-2 p-2 border-[1px] border-primaryBlack focus:outline-none" placeholder="Email Address" />
+                        <input  className="w-1/2 m-2 p-2 border-[1px] border-primaryBlack focus:outline-none" placeholder="Phone Number" />
 
                         <button className="w-full m-2  p-2 self-end text-base sm:text-lg md:text-xl border-[1px] border-primaryRed hover:bg-primaryRed hover:text-secondaryWhite">Save & Next</button>
                      </div>

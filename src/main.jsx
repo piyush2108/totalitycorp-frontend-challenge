@@ -11,6 +11,7 @@ import store from './Store/store'
 import About from './Components/Body/About'
 import Offers from './Components/Body/Offers'
 import Checkout from './Components/Body/Checkout'
+import Auth from './Components/User/Auth'
 
 function AppLayout(){
   return(
@@ -47,6 +48,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/checkout",
         element: <Checkout />
+      },
+      {
+        path: "/auth",
+        element: <Auth />
       }
     ]
   }
