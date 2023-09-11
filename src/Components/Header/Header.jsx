@@ -65,7 +65,7 @@ function Header(){
                className="lg:hidden flex justify-center items-center"
                onClick={() => handleMenuStatus()}
             >
-               <FontAwesomeIcon className={`p-2 text-base sm:text-lg md:text-2xl ${menuStatus ? text-primaryRed : text-black}`} icon={faEllipsisVertical} />
+               <FontAwesomeIcon className={`p-2 text-base sm:text-lg md:text-2xl ${menuStatus ? "text-primaryRed" : "text-black"}`} icon={faEllipsisVertical} />
             </button>
             
             <Link className="font-secondary text-lg sm:text-xl md:text-2xl" to="/">
