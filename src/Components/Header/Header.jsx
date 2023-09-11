@@ -65,7 +65,7 @@ function Header(){
                className="lg:hidden flex justify-center items-center"
                onClick={() => handleMenuStatus()}
             >
-               <FontAwesomeIcon className="p-2 text-base sm:text-lg md:text-2xl" icon={faEllipsisVertical} />
+               <FontAwesomeIcon className={`p-2 text-base sm:text-lg md:text-2xl ${menuStatus ? text-primaryRed : text-black}`} icon={faEllipsisVertical} />
             </button>
             
             <Link className="font-secondary text-lg sm:text-xl md:text-2xl" to="/">
@@ -114,7 +114,7 @@ function Header(){
                <p className="sm:py-1 px-1 sm:px-2 bg-primaryRed text-white text-xs sm:text-sm rounded-md">
                   {wishlistItems.length}
                </p>
-               <FontAwesomeIcon className="md:hidden" icon={faHeart} />
+               <FontAwesomeIcon className="md:hidden hover:opacity-80" icon={faHeart} />
                <p className="hidden md:block hover:text-primaryRed/80">Wishlist</p>
             </button>
 
@@ -125,7 +125,7 @@ function Header(){
                <p className="sm:py-1 px-1 sm:px-2 bg-primaryRed text-white text-xs sm:text-sm rounded-md">
                   {cartItems.length}
                </p>
-               <FontAwesomeIcon className="md:hidden" icon={faShoppingBag} />
+               <FontAwesomeIcon className="md:hidden hover:opacity-80" icon={faShoppingBag} />
                <p className="hidden md:block hover:text-primaryRed/80">Cart</p>
             </button>
             
@@ -133,7 +133,7 @@ function Header(){
                className="flex justify-center items-center"
                onClick={() => handleUserStatus()}
             >
-               <FontAwesomeIcon className="text-lg sm:text-lg md:text-3xl" icon={faCircleUser} />
+               <FontAwesomeIcon className="text-lg sm:text-lg md:text-3xl hover:opacity-80" icon={faCircleUser} />
             </button>
 
             {
