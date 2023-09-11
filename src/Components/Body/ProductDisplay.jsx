@@ -90,24 +90,24 @@ function ProductDisplay(){
 
                <h1 className="py-2 font-secondary text-base sm:text-xl md:text-2xl">{product?.title}</h1>
 
-               <p className="py-4 text-sm sm:text-base">{product?.description}</p>
+               <p className="py-4 text-xs sm:text-sm md:text-base">{product?.description}</p>
 
                <p className="py-2 font-secondary text-lg sm:text-2xl md:text-3xl text-primaryRed">${product?.price}</p>
 
                <div className="p-4 flex flex-col justify-around items-center gap-2">
-                  <div className="flex justify-around items-center border-[1px] border-primaryBlack/20 rounded-lg overflow-hidden">
+                  <div className="flex justify-around items-center border-[1px] border-primaryBlack rounded-lg overflow-hidden">
                      <button 
                         onClick={() => handleAddProduct()}
-                        className="p-2 border-r-[1px] border-primaryBlack/20 text-base sm:text-xl md:text-2xl hover:bg-primaryBlack/20"
+                        className="py-1 px-2 border-r-[1px] border-primaryBlack text-base sm:text-xl md:text-2xl hover:bg-primaryBlack hover:text-secondaryWhite"
                      >
                         +
                      </button>
 
-                     <button className="p-2 border-r-[1px] border-primaryBlack/20 text-base sm:text-xl md:text-2xl hover:bg-primaryBlack/20">{getProductCount()}</button>
+                     <button className="py-1 px-2 border-r-[1px] border-primaryBlack text-base sm:text-xl md:text-2xl hover:bg-primaryBlack hover:text-secondaryWhite">{getProductCount()}</button>
 
                      <button 
                         onClick={() => handleDecreaseProductCount()}
-                        className="p-2 border-r-[1px] border-primaryBlack/20 text-base sm:text-xl md:text-2xl hover:bg-primaryBlack/20"
+                        className="py-1 px-2 text-base sm:text-xl md:text-2xl hover:bg-primaryBlack hover:text-secondaryWhite"
                      >
                         -
                      </button>

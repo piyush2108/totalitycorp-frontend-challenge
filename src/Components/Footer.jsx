@@ -13,7 +13,7 @@ function Footer() {
 
       <div className="w-full md:w-1/2 flex flex-col sm:flex-row justify-between gap-2">
         <ul className="mt-4">
-          <li className="mb-4 text-lg opacity-80 hover:opacity-100">
+          <li className="mb-4 font-bold text-lg">
             Company
           </li>
 
@@ -35,7 +35,7 @@ function Footer() {
         </ul>
 
         <ul className="mt-4">
-          <li className="mb-4 text-lg opacity-80 hover:opacity-100">
+          <li className="mb-4 font-bold text-lg">
             Contact
           </li>
 
@@ -53,7 +53,7 @@ function Footer() {
         </ul>
 
         <ul className="mt-4">
-          <li className="mb-4 text-lg opacity-80 hover:opacity-100">
+          <li className="mb-4 font-bold text-lg">
             Legal
           </li>
 
