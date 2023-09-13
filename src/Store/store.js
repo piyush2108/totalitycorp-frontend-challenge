@@ -6,7 +6,8 @@ const store = configureStore({
    reducer: {
       cart: CartSlice,
       wishlist: WishlistSlice
-   }
+   },
+   devTools: false
 })
 
 export default store
